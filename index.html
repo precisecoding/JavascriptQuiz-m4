@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Quiz</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Java Script Quiz</h1>
+    </p>Time Remaining:</p><p class="timeremaining" id="timer"><span>60</span> 
+        <p>
+            <a class="anchor" link rel="highscore" href="highscore.html">View High Scores</a>
+            <span id="recorded-high-scores">"0"</span>
+        </p>
+        <p id="displayed-score">Your Score:"0"<p>
+    </header>
+    <div id="quiz-container">
+        <section id="rules-section">
+            <h2>Rules:</h2>
+            <p>You have 60 seconds to complete the multiple choice quiz regarding the fundamentals
+                of javascript. If you select the wrong awnser 5 seconds will be deducted from the timer.
+                you will see a prompt message of "wrong". If you answer correctly you will
+                see a prompt of "correct" and no seconds will be deducted from the timer.
+                The quiz ends when the timer = 0. When you finish you will be able to record
+                your initials with your score.</p>
+            <p>Good Luck!</p>
+                <button id="start-button">Start Quiz</button>
+        </section>
+        </button>
+        <div class="quiz-questions" id="quiz-questions"></div>
+        <article id="game-over" style="display: none;">
+            <h3>Game Over</h3>
+            <section>
+                <p>Enter your initials:</p>
+                <input type="text" id="initials" />
+                <button id="save-score">Save Score</button>
+                <span id="recorded-score">"0"</span>
+            </section>
+        </article>
+    </div>
+    <script type="text/javascript" src=".//script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+h1 {
+    background-color: blueviolet;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+body {
+    font-family: Arial, sans-serif, Arial, Helvetica, sans-serif;
+    background-color: saddlebrown;
+}
+
+#quiz-container {
+    margin: 0px auto;
+    width: 60%;
+    border: solid 1px black;
+    padding: 2.5px;
+    background-color:green;
+    color: white;
+}
+
+button {
+    padding: 5px 15px;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: indigo;
+    color: white;
+}
+
+.anchor:hover {
+    top: 5px;
+    background-color: indigo;
+    color: white;
+    
+}
+
