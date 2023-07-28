@@ -44,3 +44,17 @@ To use this website, simply click the start button and answer the questions. If 
 
 ![Screenshot of JavaScript Quiz](./Images/Screenshotjavascriptquiz.png)
 
+### Link to githubrepo: https://github.com/precisecoding/JavascriptQuiz-m4.git
+
+### Deployed link:
+
+### This site was built using github pages.
+https://pages.github.com/
+
+### License
+MIT License
+https://opensource.org/licenses/MIT
+
+### Thanks to everyone for support and contributions!
+Sources used:
+https://developer.mozilla.org/en-US/, https://www.w3schools.com/, https://stackoverflow.com/. Worked with tutor, Cody Junier from DU Whow was helpful along with TA George Yoo.
