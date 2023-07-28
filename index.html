@@ -15,9 +15,9 @@
     </p>Time Remaining:</p><p class="timeremaining" id="timer"><span>60</span> 
         <p>
             <a class="anchor" link rel="highscore" href="highscore.html">View High Scores</a>
-            <span id="recorded-high-scores">"0"</span>
+            <span id="recorded-high-scores">0</span>
         </p>
-        <p id="displayed-score">Your Score:"0"<p>
+        <p >Your Score: <span id="displayed-score">0</span></p>
     </header>
     <div id="quiz-container">
         <section id="rules-section">
@@ -33,16 +33,16 @@
         </section>
         </button>
         <div class="quiz-questions" id="quiz-questions"></div>
+    </div>    
         <article id="game-over" style="display: none;">
             <h3>Game Over</h3>
             <section>
-                <p>Enter your initials:</p>
-                <input type="text" id="initials" />
+                <p>Thank you for playing! Game Over, please enter your initials and save your score.</p>
+                <input type="text" id="initials" placeholder="Enter Name" />
                 <button id="save-score">Save Score</button>
-                <span id="recorded-score">"0"</span>
             </section>
         </article>
-    </div>
+    
     <script type="text/javascript" src=".//script.js"></script>
 </body>
 

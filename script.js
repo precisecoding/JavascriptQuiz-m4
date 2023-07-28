@@ -59,21 +59,33 @@ var displayQuestions = [
         correctAnswer: "//This is a comment"
     },
 ];
-
+let scoresArray = JSON.parse(localStorage.getItem("scoresArray")) || []
 let yourScore = 0;
+let currentAnswer = 0;
 let currentQuestion = 0;
 let timerInterval = 60;
-let recordHighScore = document.getElementById("save-score");
+let saveScore = document.getElementById("save-score");
 let viewHighScore = document.getElementById("high-score");
 let startButton = document.getElementById("start-button");
 let timer = document.getElementById("timer");
-let rulesSection = document.getElementById("rules-section")
-let quizQuestions = document.getElementById("quiz-questions")
+let rulesSection = document.getElementById("rules-section");
+let quizQuestions = document.getElementById("quiz-questions");
+let displayedScore = document.getElementById("displayed-score")
+let quizContainer = document.getElementById("quiz-container")
+let gameOver = document.getElementById("game-over")
+let placeHolder = document.getElementById("initials")
 function startQuiz() {
-    setInterval(function () {
-        timerInterval = timerInterval - 1;
-        timer.textContent = timerInterval;
+    let intervalId = setInterval(function () {
+        if (timerInterval > 0) {
+            timerInterval = timerInterval - 1;
+            timer.textContent = timerInterval;
+        } else {
+            clearInterval(intervalId)
+            timer.textContent = "Your Time Is Up"
+           endGame ()
+        }
     }, 1000);
+
     rulesSection.style.display = "none";
     displayQuestion()
 }
@@ -91,29 +103,40 @@ function displayQuestion() {
         li.textContent = displayQuestions[currentQuestion].choices[i]
         ul.appendChild(li)
         li.addEventListener("click", function () {
-            console.log(li.textContent)
-
             if (li.textContent === displayQuestions[currentQuestion].correctAnswer) {
-                yourScore = yourScore + 10
-                console.log(yourScore)
+                yourScore = yourScore + 25
+                displayedScore.textContent = yourScore
             }
             else if (li.textContent !== displayQuestions[currentQuestion].correctAnswer) {
-                yourScore = yourScore - 5
-                console.log(yourScore)
+                timerInterval = timerInterval - 5
             }
-           quizQuestions.removeChild(h3)
-           quizQuestions.removeChild(ul)
-           currentQuestion = currentQuestion + 1
-            displayQuestion()
+            quizQuestions.removeChild(h3)
+            quizQuestions.removeChild(ul)
+            currentQuestion = currentQuestion + 1
 
+            if (currentQuestion < displayQuestions.length) {
+                displayQuestion()
+            }
+            else {
+                endGame ()
+            }
         })
     }
-
-
-
-
-
-
     quizQuestions.appendChild(ul)
-
 }
+   function endGame () {
+    quizContainer.style.display = "none"
+    gameOver.style.display = "block"
+    
+   }
+   saveScore.addEventListener ("click", function () {
+   let getInitials = placeHolder.value
+   scoresArray.push({
+    id:Math.floor(Math.random()*1000), 
+    name:getInitials,
+    score:yourScore,
+   })
+   localStorage.setItem("scoresArray", JSON.stringify(scoresArray))
+   window.location.href="/highscore.html"
+   } )
+

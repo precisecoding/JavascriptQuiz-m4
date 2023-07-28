@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightyellow;
+}
+h1 {
+    color: darkblue;
+    text-shadow: 2px 2px lightblue;
+}
+#highscore-container {
+    border: solid 2px darkblue;
+    padding: 20px;
+    background-color: lightblue;
+    color: darkblue;
+    box-shadow: 10px 10px 5px grey;
+}
